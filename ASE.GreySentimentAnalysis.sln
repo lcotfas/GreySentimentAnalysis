@@ -1,11 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASE.GreySentimentLexicon", "ASE.GreySentimentLexicon\ASE.GreySentimentLexicon.csproj", "{8298C628-B072-47A2-9F0A-94730270D3CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASE.GreySentimentAnalysis", "ASE.GreySentimentAnalysis\ASE.GreySentimentAnalysis.csproj", "{372A7496-1C1A-4C9D-98FE-C2104BD179AF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7B06546C-C932-4C10-99DB-80DF18EA1375}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASE.GreySentimentAnalysis.UnitTest", "ASE.GreySentimentAnalysis.UnitTest\ASE.GreySentimentAnalysis.UnitTest.csproj", "{57D9CF9D-1195-4B8A-8C81-7F1F33A095DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASE.GreySentimentAnalysis.Console", "ASE.GreySentimentAnalysis.Console\ASE.GreySentimentAnalysis.Console.csproj", "{372A7496-1C1A-4C9D-98FE-C2104BD179AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASE.GreySentimentAnalysis", "ASE.GreySentimentAnalysis\ASE.GreySentimentAnalysis.csproj", "{12457FF7-9C29-4A82-8105-646A8CCAAB96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASE.GreySentimentAnalysis.Web", "ASE.GreySentimentAnalysis.Web\ASE.GreySentimentAnalysis.Web.csproj", "{F7DE19EC-47C4-4A23-8399-312E97F3EF4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASE.GreySentimentAnalysis.Web.Tests", "ASE.GreySentimentAnalysis.Web.Tests\ASE.GreySentimentAnalysis.Web.Tests.csproj", "{B6F66F31-3405-4F12-8FB0-7859F52F0980}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +27,32 @@ Global
 		{8298C628-B072-47A2-9F0A-94730270D3CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8298C628-B072-47A2-9F0A-94730270D3CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8298C628-B072-47A2-9F0A-94730270D3CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57D9CF9D-1195-4B8A-8C81-7F1F33A095DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57D9CF9D-1195-4B8A-8C81-7F1F33A095DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57D9CF9D-1195-4B8A-8C81-7F1F33A095DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57D9CF9D-1195-4B8A-8C81-7F1F33A095DF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{372A7496-1C1A-4C9D-98FE-C2104BD179AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{372A7496-1C1A-4C9D-98FE-C2104BD179AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{372A7496-1C1A-4C9D-98FE-C2104BD179AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{372A7496-1C1A-4C9D-98FE-C2104BD179AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12457FF7-9C29-4A82-8105-646A8CCAAB96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12457FF7-9C29-4A82-8105-646A8CCAAB96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12457FF7-9C29-4A82-8105-646A8CCAAB96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12457FF7-9C29-4A82-8105-646A8CCAAB96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7DE19EC-47C4-4A23-8399-312E97F3EF4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7DE19EC-47C4-4A23-8399-312E97F3EF4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7DE19EC-47C4-4A23-8399-312E97F3EF4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7DE19EC-47C4-4A23-8399-312E97F3EF4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6F66F31-3405-4F12-8FB0-7859F52F0980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F66F31-3405-4F12-8FB0-7859F52F0980}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F66F31-3405-4F12-8FB0-7859F52F0980}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6F66F31-3405-4F12-8FB0-7859F52F0980}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{57D9CF9D-1195-4B8A-8C81-7F1F33A095DF} = {7B06546C-C932-4C10-99DB-80DF18EA1375}
+		{B6F66F31-3405-4F12-8FB0-7859F52F0980} = {7B06546C-C932-4C10-99DB-80DF18EA1375}
 	EndGlobalSection
 EndGlobal

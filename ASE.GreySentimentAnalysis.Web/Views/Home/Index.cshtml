@@ -1,0 +1,132 @@
+﻿@using System.Drawing
+@using ASE.GreySentimentAnalysis
+@model ASE.GreySentimentAnalysis.Web.Models.AnalysisViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+	<div class="container" style="margin-top: 40px">
+		<div class="row" style="margin-bottom: 30px">
+			<div class="col-md-12 text-center">
+				<h1>Grey<span style="color: darkblue">SentimentAnalysis</span></h1>
+			</div>
+		</div>
+		<div class="row well">
+			<div class="col-md-12">
+				<div class="input-group">
+					@Html.TextBoxFor(x => x.Tweet,
+						new
+						{
+							@class = "form-control",
+							placeholder = "Paste a tweet here to begin :)"
+						})
+					<span class="input-group-btn">
+						<input type="submit"
+							   class="btn btn-default btn-primary"
+							   value="Analyze" />
+					</span>
+				</div>
+			</div>
+		</div>
+
+		@if (Model?.AnalysisResult != null)
+		{
+			<br/>
+			<h2>Result</h2>
+			<div class="row">
+
+				<div class="col-md-8">
+					<table class="table table-striped">
+						<tr>
+							<th class="text-center">#</th>
+							<th>Word</th>
+							<th class="text-center">Operation</th>
+							<th class="text-center">Polarity</th>
+						</tr>
+						@{ var i = 0; }
+						@foreach (var annotation in Model.AnalysisResult.Annotations)
+						{
+							i++;
+							var color = Color.Black;
+							if (annotation is SentimentAnnotation)
+							{
+								color = Color.RoyalBlue;
+							}
+							else if (annotation is BoosterAnnotation)
+							{
+								color = Color.DarkOrange;
+							}
+							<tr style="color: @color.Name">
+								<td>@i</td>
+								<td>
+									@annotation.Word
+								</td>
+								<td class="text-center">
+									@if (annotation is SentimentAnnotation)
+									{
+										@:+
+									}
+									else if (annotation is BoosterAnnotation)
+									{
+										@:*
+									}
+								</td>
+								<td class="text-center">
+									@if (annotation is SentimentAnnotation)
+									{
+										@(((SentimentAnnotation) annotation).GreyPerception)
+									}
+									else if (annotation is BoosterAnnotation)
+									{
+										@:0.293
+									}
+								</td>
+							</tr>
+						}
+						<tfoot>
+						<tr class="active" style="font-weight: bold;">
+							<td colspan="3" class="text-right">Overall Polarity = </td>
+							<td class="text-center">@Model.AnalysisResult.GreyPerception</td>
+						</tr>
+						</tfoot>
+					</table>
+				</div>
+				<div class="col-md-4 text-center">
+					<span 
+						 style="font-size: 120px;">
+@if (Model.AnalysisResult.GreyPerception.Mean > 0)
+{
+	@: :)
+}
+else if (Model.AnalysisResult.GreyPerception.Mean < 0)
+{
+	@: :(
+}
+else
+{
+	@: :|
+}
+</span>
+				</div>
+			</div>
+		}
+		<h2>Examples</h2>
+		<code>
+			I am very upset and disappointed by this iphone update failed backup.<br/>
+			The camera is quite bad , but the screen is amazing .
+			</code>
+
+		<div class="row">
+			<div class="col-md-12">
+				<hr />
+				<footer>
+					<p>&copy; @DateTime.Now.Year - GreySentimentAnalysis</p>
+				</footer>
+			</div>
+		</div>
+	</div>
+}
+

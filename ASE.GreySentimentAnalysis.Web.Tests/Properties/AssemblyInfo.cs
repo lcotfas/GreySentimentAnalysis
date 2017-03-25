@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ASE.GreySentimentAnalysis")]
+[assembly: AssemblyTitle("ASE.GreySentimentAnalysis.Web.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ASE.GreySentimentAnalysis")]
+[assembly: AssemblyProduct("ASE.GreySentimentAnalysis.Web.Tests")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("12457ff7-9c29-4a82-8105-646a8ccaab96")]
+[assembly: Guid("b6f66f31-3405-4f12-8fb0-7859f52f0980")]
 
 // Version information for an assembly consists of the following four values:
 //

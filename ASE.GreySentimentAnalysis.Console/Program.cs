@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ASE.GreySentimentAnalysis
 {
-	class Program
+	internal class Program
 	{
-		static void Main(string[] args)
+		private static void Main(string[] args)
 		{
 			var valenceDictionary = new Dictionary<string, string>();
 
@@ -57,7 +53,7 @@ namespace ASE.GreySentimentAnalysis
 				var text = tweet.Value;
 
 				var tweetGreyScore = greyTweetAnalyser.CalculateTweetPerception(text);
-				var average = (tweetGreyScore.Low + tweetGreyScore.High)/2;
+				var average = (tweetGreyScore.GreyPerception.Low + tweetGreyScore.GreyPerception.High)/2;
 
 				var valence = valenceDictionary["\"" + id + "\""];
 
