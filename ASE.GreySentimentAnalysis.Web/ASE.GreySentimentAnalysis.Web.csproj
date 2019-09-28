@@ -117,6 +117,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Properties\PublishProfiles\Directory.pubxml" />
+    <None Include="Properties\PublishProfiles\grey-sentiment-analysis-swn - Web Deploy.pubxml" />
     <None Include="Resources\GreySentimentLexicon.csv" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
